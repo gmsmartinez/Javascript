@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="user">
+    <button onclick="fetchData()">Buscar</button>
+    <div>
+        <label>Nombre:</label><span id="name"></span><br />
+        <label>Empresa:</label><span id="company"></span><br />
+        <label>Bio:</label><span id="bio"></span><br />
+        <label>Status:</label><span id="status"></span>
+    </div>
+
+<!-- GET es para pedir informacion-->
+<!-- POST es para enviar informacion-->
+<!-- PUT es para actualizar informacion--> 
+<!-- DELETE es para borrar informacion--> 
+
+<!-- 2XX significa que todo esta bien-->
+<!-- 3XX significa REDIRECCIONANDO-->
+<!-- 4XX errores de parte del cliente-->
+<!-- 5XX errores de parte del servidor-->
+
+<script>
+    //NUESTRO ASYNC tiene que estar adentro de una funcion
+    //FETCH: es ASINCRONICO. es la forma que nos da js para hacer http request. o sea, si
+    //nosotros queremos desde nuestra aplicacion en js, acceder a informacion que nos devuelva un servidor externo
+    //vamos a tener que hacerlo mediante fetch
+    //API: Es una interfaz de datos que tiene el servidor.
+    //api: como un array de objetos que nos va a devolver un servidor. nos va a devolver informacion en formato json.
+    
+    async function fetchData() { //TENEMOS QUE HACER LA FUNCION SI O SI PARA QUE FUNCIONE EL ASYNC AWAY
+        //PARA OBTENER EL VALOR DE UN INPUT USAMOS EL .value
+        const inputValue = document.getElementById("user").value;
+        const data = await fetch(`https://api.github.com/users/${inputValue}`); //ACA EMPIEZO
+        const json = await data.json() //ACA ESTAMOS TRANSFORMANDO EL STRING de datos EN UN JSON. PORQUE NOS LLEGA COMO STRING DE DATOS. ENTONCES HAY QUE TRASNFORMARLO
+        
+        
+        console.log(data);
+        if (data.status == 200) {
+            document.getElementById("name").innerText = json.name;
+            document.getElementById("company").innerText = json.company;
+            document.getElementById("bio").innerText = json.bio;
+        }
+        
+        document.getElementById("status").innerText = data.status;
+
+    }
+
+    
+    
+    //Passionate about web development, web perfomance and artificial intelligence.
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const sentence = 'gabriela "gaby" es un programador';
+        const nombre = 'gabriela';
+        const apellido = 'martinez';
+        const hobbies = 'programar';
+        const nacimiento = 1990;
+        let edad = 26;
+
+        console.log("hola, mi nombre es " + nombre + " " + apellido + " y me gusta " + hobbies + ". Tengo " + edad + " anios.");
+        console.log(`hola, mi nombre es ${nombre} ${apellido} y me gusta ${hobbies}. Tengo ${edad} anioss porque naci en ${nacimiento}`);
+        
+        //OTRO EJEMPLO CON BACKTICkS
+
+        const song = `
+            primera linea
+            segunda linea
+            tercera linea
+            `;
+
+        console.log(song);
+
+        console.log('Vieja edad: ' + edad)
+        console.log(`Edad actual: ${edad}`);
+
+        edad = edad + 1
+        
+        console.log("Mi nombre es " + nombre + " mi edad es " + edad);
+        console.log(`HOLA ${nombre}`);
+
+
+        //Métodos principales
+
+        //Math.round(X);   Redondea
+        //Math.floor(X);   Trunca al entero. siempre redondea para abajo. 3.9 = queda 3
+        //Math.ceil(X);		Si tiene decimal redondea al entero que sigue. lo contrario del anterior. ej: 3.1 = 4
+        //Math.random();  numero aleatorio 
+        //Math.random()*10
+        //Math.floor(Math.random() *10);
+
+        const kids = 3;
+        const candies = 10;
+        const total = Math.floor(candies / kids);
+        const sobrante = candies - (total*kids);
+
+        //ESO ULTIMO SE PUEDE SIMPLIFICAR CON EL RESTO. ASI: CONST SOBRANTE = CANDIES % KIDS; (ESO ME VA A MOSTRAR EL RESTO SOLAMENTE. O SEA, 1)
+
+        console.log(`el total es ${total} caramelos para cada chico`);
+        console.log(`y lo que sobra es ${sobrante} caramelo`);
+
+        console.log(Math.floor(candies / kids));
+
+        const a = 10;
+        const b = "20";
+
+        console.log(typeof a)
+        console.log(typeof b)
+        console.log(a * b); 
+
+
+        console.log(candies / kids);
+
+
+    </script>
+</body>
+</html>

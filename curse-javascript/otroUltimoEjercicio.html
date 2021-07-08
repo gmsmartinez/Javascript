@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+          body {
+        background-color: #a8c0c4;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        height: 600px;
+      }
+
+      .maincontainer {
+        background-color: #6ee6f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 400px;
+        height: 400px;
+        border-radius: 8px;
+      }
+      .imgContainer {
+        width: 30%;
+        height: 30%;
+        border-radius: 50%;
+        background-color: #3088d6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid white;
+      }
+      .pokemonId {
+        height: 40px;
+        width: 200px;
+        border: transparent;
+      }
+      .pokemonName {
+        color: white;
+        font-size: 4em;
+        font-weight: bolder;
+      }
+
+</style>
+<body>
+    <main class="maincontainer">
+
+        <input type="text" class="pokemonId" id="pokemonId" placeholder="Buscar Pokemon...">
+        <div class="imgContainer">
+      
+          <img id="pokemonImg" class="pokemonImg" />
+        </div>
+        <label class="pokemonName" id="pokemonName"></label>
+      
+    </main>
+
+    <script>
+        async function fetchData(e) {
+  //Ejecuto una vez que presiono Enter -> Ingreso Nombre
+  if (e.key == "Enter" && e.target.value != "") {
+    const inputValue = document.getElementById("pokemonId").value.toLowerCase();
+    const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${inputValue}`);
+
+    if (data.status == 200) {
+      //nos fijamos si data.status es 200 para parsear el json
+      //porque si no, explota y corta la ejecución de la función
+      //entonces, si data vuelve 200 sabemos que tiene la información del pokemon
+      //y la podemos parsear
+      //la parseamos, y hacemos la magia de siempre
+      //si falla, entra en el else :)
+      const json = await data.json();
+      document.getElementById("pokemonName").innerText = json.name;
+      document.getElementById("pokemonImg").classList.add("view");
+      document.getElementById("pokemonImg").src = json.sprites.front_default;
+      document.getElementById("pokemonId").value = "";
+    } else {
+      document.getElementById("pokemonName").innerText = "I'm not a Pokemon";
+      document.getElementById("pokemonId").value = "";
+      document.getElementById("pokemonImg").src = "";
+      /*lo que te decía de limpiar la imagen como limpias el value
+                Igualmente, no es correcto que el tag img no tenga src, SIEMPRE pero SIEMPRE debería tener uno
+                para contrarrestar eso lo que se suele hacer es por default dejar cargada una imagen (onda un signo de pregunta por ejemplo)y después lo que haces es cambiarle el src cuando tenes data del pokemon, y cuando falla volves a defaultear a la default */
+
+      /* por si no se entiende: 
+                  1- en el html por defecto pones un  src="cualEsEstePokemon.png"
+                  2- si cuando buscan encuentra pokemon pones la del pokemon
+                  3- Si falla, pones devuelta src="cualEsEstePokemon.png"
+                  4- Sos feliz de que le ganaste a javascript!
+                */
+        }
+    }
+}
+const input = document.getElementById("pokemonId");
+
+input.addEventListener("keypress", (e) => fetchData(e));
+        
+
+    </script>
+    
+</body>
+</html>

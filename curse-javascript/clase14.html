@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transition: 1s all;
+        }
+
+        .bigBox {
+            width: 400px;
+            transition: 1s all;
+        }
+    </style>
+
+    <div id="container" class="container" ></div>
+    <button onclick="addBigBox()">Agregar clase</button>
+    <button onclick="removeBigBox()">Remover clase</button>
+
+    <script>
+        //SCOP: ES EL ALCANCE QUE TIENE UNA VARIABLE O UNA FUNCION. VA DE LOS MAS GRANDE A LO MAS CHICO
+        
+        const container = document.getElementById('container')
+
+        
+        function addBigBox() {
+            container.classList.add('bigBox');
+        }
+
+        function removeBigBox() {
+            container.classList.remove('bigBox');
+        }
+
+
+        //<button onclick="toggleBigBox('add')">agregar clase</button>
+        //<button onclick="toggleBigBox('remove')">remover clase</button>
+        //function toggleBigBox(action){
+        //    if(action == "add"){
+        //        container.classList.add("bigBox");
+        //    } else if (action == "remove") {
+        //        container.classList.remove("bigbox");
+        //    } else {
+        //        console.log("accion invalida");
+        //    }
+        //}
+        // container.classList.add('bibBox')
+        //container.classList.remove('bigBox')
+        //container.classList.toggle('bigBox')
+
+        //EVENTOS> INTERACCIONES QUE HACEN LOS USUARIOS CON UNA APLICACION. EJ: ONCLICK
+
+
+
+    </script>
+
+</body>
+</html>

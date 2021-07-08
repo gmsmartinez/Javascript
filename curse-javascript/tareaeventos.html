@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+* {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  background-color: #059ac7;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .form .inputs {
+  height: 70px;
+  border-radius: 6px;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+.container .form .inputContainer .typeUsername {
+  font-family: "Nunito", sans-serif;
+  background-color: white;
+  padding-left: 12px;
+  width: 550px;
+}
+.container .form .search {
+  background-color: #4fd1f8;
+  color: #025b77;
+  margin-top: 30px;
+  width: 562px;
+  font-weight: 600;
+  cursor: pointer;
+}
+</style>
+<body>
+    <main class="container">
+        <form class="form" action="#" method="POST">
+          <div class="inputContainer">
+            <input
+              type="text"
+              name=""
+              id="typeUsername"
+              class="typeUsername inputs"
+              placeholder="type username..."
+              onkeypress="inputValue(event)"
+            />
+          </div>
+          <button type="button" class="search inputs">Buscar usuario</button>
+        </form>
+      </main>
+      <script>
+          function inputValue(e) {
+            if (e.key == "+") {
+                console.log(e.target.value);
+            }
+            }
+      </script>
+</body>
+</html>

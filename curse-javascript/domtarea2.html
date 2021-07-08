@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Seleccionando elementos del DOM</title>
+    
+</head>
+
+<style>
+    body{
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    width: 350px;
+    height: 350px;
+    border-radius: 0.5rem;
+    margin: 3rem;
+    box-shadow: 0.2rem 0.2rem 0.3rem rgba(189, 189, 189, 0.404);
+}
+
+.container .wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 270px;
+}
+
+.container .wrapper img{
+    width: 100px;
+    z-index: 1;
+    border: 1rem solid white;
+    border-radius: 50%;
+}
+
+.container .wrapper hr{
+    position: absolute;
+    width: 20rem;
+    top: 5rem;
+    border: none;
+    border-bottom: 0.01rem solid #e6e6e6;
+}
+
+.container .wrapper .text h3{
+    color: #2f2f2f;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 0 0.4rem 0;
+}
+
+.container .wrapper .text h4{
+    color: #b2b2b2;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin: 0;
+}
+
+.container #btnMeet{
+    width: 100%;
+    height: 70px;
+    background-color: #0096fc;
+    border: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+</style>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <img src="https://i.pinimg.com/736x/18/71/8f/18718f5fa70af55d0ee1a9aa14f1fcd4.jpg" alt="avatar">
+            <hr>
+            <div class="text">                
+                <h3>Javier Rodriguez</h3>
+                <h4>@javicerodriguez</h4>
+            </div>
+        </div>
+        <button id="btnMeet">MEET JAVIER</button>
+    </div>
+
+    <script>
+        const eidi = document.getElementById('btnMeet');
+        const clase = document.getElementsByClassName('wrapper');
+        const tags = document.getElementsByTagName('div');
+
+        console.log(eidi);
+        console.log(clase);
+        console.log(tags);
+    </script>
+</body>
+
+</html>
+                  
+                  
+                  

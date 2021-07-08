@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input-task" type="text">
+    <button onclick="addItem()">Agregar</button>
+    <ul id="list"></ul>
+    <p id="erase">Borrame</p>
+
+    <script>
+
+        function deleteElem() {
+            const elem = document.getElementById('erase');
+
+            elem.remove();
+        }
+
+        //INNERHTML= ES PARA CAMBIAR EL CONTENIDO INTERNO DE UNA ETIQUETA
+        //VALUE = PARA SABER EL VALOR DE UN INPUT
+
+        function addItem() {
+            let taskValue = document.getElementById("input-task").value;
+            addElementToDOM("li", taskValue, "list");
+            document.getElementById('input-task').value = "";
+
+        }
+
+        //A CONTINUACION HAY UNA FUNCION MUY DINAMICA. Y REUTILIZABLE:
+
+        function addElementToDOM(type, content, parentId) {
+            const parent = document.getElementById(parentId);
+            const elem = document.createElement(type);
+            const text = document.createTextNode(content);
+
+            elem.appendChild(text);
+            parent.appendChild(elem);
+
+        }
+
+    </script>
+</body>
+</html>

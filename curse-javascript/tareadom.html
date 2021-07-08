@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <input type="text"  id="input-task" onkeyup="addItemPess(event)">
+    <button  type="submit" onclick="addItem()">Agregar tarea</button>
+    <ul id="list-task">
+      
+    </ul>
+   
+    
+    <script>
+        const inputTask = document.getElementById("input-task");
+        
+        function addItem() { //agrega el input por el boton
+          const id = document.getElementsByTagName("li").length + 1;
+          
+          creatItemTask("li", "input",inputTask.value,"list-task", id)
+          inputTask.value = "";
+          console.log(id)
+          
+        }
+        
+        
+        function addItemPess(e){  //funcion para agregar el task c/ enter y +
+          
+          if (e.key == "Enter") {
+            const id = document.getElementsByTagName("li").length + 1;
+            creatItemTask( "li", "input",inputTask.value,"list-task", id);
+            inputTask.value = "";
+            
+          } else if (e.key == "+") { 
+            const id = document.getElementsByTagName("li").length + 1;
+            creatItemTask( "li", "input",inputTask.value.substring(0,inputTask.value.length - 1) ,"list-task", id);
+            inputTask.value= "";
+          }
+        }
+      
+        
+        
+        
+        function creatItemTask(type, type2, content, parentId, id) {   //1er forma de crear una lista de js
+          
+          const list = document.getElementById(parentId);
+          const newLi = document.createElement(type); 
+          const inputcheck = document.createElement(type2);
+          const task = document.createTextNode(content);
+          
+          inputcheck.setAttribute("type", "radio");
+          inputcheck.setAttribute("onclick", "deleteTask(event)");
+          newLi.setAttribute("id", id);
+          
+          newLi.appendChild(task);
+          list.appendChild(newLi); 
+          newLi.appendChild(inputcheck) 
+          
+        }
+        
+        function deleteTask(e) {
+          const id = document.getElementsByTagName("li").length;
+          console.log(e)
+           e.path[1].remove()
+        } 
+
+         //Con el mismo diseño de la clase 14 hacer que
+        //Cada vez que apretemos el signo + el contenido del input se agregue a una lista
+        //Cada vez que apretemos la tecla enter se agregue el contenido del input a la lista
+        //Al clickear en un elemento de la lista, que el elemento se borre
+
+		</script>
+</body>
+</html>

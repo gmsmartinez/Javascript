@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //CONDICIONALES ELSE=SINO
+        //ELSE IF = EN CAMBIO SI
+        // && = y (aca se debe cumplir todas las condiciones)
+        // || = o (aca con que se cumpla una de las condiciones, es suficiente)
+
+        const isRaining = false;
+
+        if (isRaining == true) {
+            console.log("agarro el paraguas");
+        } else {
+            console.log("no agarro nada");
+        }
+
+        //CONST NAME = "JUANI";
+        //CONST SURNAME = "GALLO";
+        // IF(NAME == "JUANI" && SURNAME == "GALLO") {
+            //CONSOLE.LOG("USTED TIENE ACCESO");
+            //}ELSE{
+                //CONSOLE.LOG("USTED NO TIENE ACCESO");
+            
+        //}
+
+
+        //ESTO ULTIMO LO PUEDO SIMPLIFICAR PASANDOLO A OBJETO:
+        // const person = {
+            //name: "Gabriela",
+            //surname: "martinez"
+        //};
+        //if (person.name == "Gabriela" && persona.surname == "Martinez"){
+            //console.log("podes acceder");
+        //} else {
+            //console.log("no tenes acceso");
+        //}
+
+        
+        //PERO TMB SE PUEDE HACER ESTO CON LOS OBJETOS.
+        //ES DE LA ULTIMA VERSION DE JAVASCRIPT.
+        //SE SIMPLIFICA ASI ESA PARTE DESPUES DEL CONST PERSON: 
+
+        //const {name, surname } = person;
+        //if (name == 'Juani' && surname == 'Gallo')
+
+    
+
+
+
+        // ELSE IF = EN CAMBIO SI
+        //ELSE = SINO
+
+        const age = 17;
+        const havePermission = true;
+
+        //if (age>=65) {
+        //    console.log("soy jubilado");
+        //} else if (age >= 18 && age < 65) {
+        //    console.log("soy mayor de edad");
+        //} else {
+        //    console.log("soy menor de edad");
+        //}
+
+        //OTRA FORMA DE HACERLO:
+        if ((age >= 18 && age < 65) || havePermission == true) {
+            console.log("soy mayor de edad y/o tengo un permiso");
+        } else if (age >= 65) {
+            console.log("soy jubilado");
+        } else {
+            console.log("soy menor de edad");
+        }
+
+
+        //TAREAAAAAAAAAAAAAAAA
+        const arrayNumbers = [1,2,3,4,5,6,7,8,9,10];
+          let number = arrayNumbers[2];
+
+          if(number%2 == 0){
+            console.log('Es par');
+          } else{
+            console.log('Es impar')
+          }
+
+          const arrayNumbers2 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+          let number2 = arrayNumbers2[2];
+
+          if(number2 % 3 == 0 || number2 % 5 == 0){
+            console.log(number2)
+          }else{
+            console.log(`El numero ${number2} no es multiplo ni de 3 ni de 5`)
+          }
+
+          number2 = arrayNumbers[5];
+
+          if(number2 % 2 == 0 && number2 % 3 == 0){
+            console.log(`El numero ${number2} es multiplo de 2 y 3`)
+          }else{
+            console.log(`El numero ${number2} no es multiplo de 2 y 3`)
+          }
+
+
+    </script>
+</body>
+</html>

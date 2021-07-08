@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const edad1 = 10
+        const edad2 = 20
+        const edad3 = 18
+        const edad4 = 1
+        const edad5 = 58
+
+
+        
+        function checkAge(age){
+            if(age >=18){
+                console.log('puede entrar')
+            }   else{
+                console.log('no puede entrar')
+            }
+        }
+
+            checkAge(edad1);
+            checkAge(edad2);
+            checkAge(edad3);
+            checkAge(edad4);
+            checkAge(edad5);
+
+        //tareaaa 
+
+        const num1 = 4;
+        const num2 = 25;
+
+      //Hacer una función que devuelva la suma de dos números
+        function suma(a, b) {
+        console.log(a + b);
+        }
+
+        suma(num1, num2);
+
+      //Hacer una función que reciba como parámetro un número e imprima si es par o impar
+        function parImpar(n) {
+        if (n % 2 == 0) {
+          console.log(`${n} es par.`);
+        } else {
+          console.log(`${n} es impar.`);
+        }
+      }
+
+      parImpar(num1);
+      parImpar(num2);
+
+      //Hacer una función que reciba como parámetro un número e imprima verdadero si el número es múltiplo de 3 o 5
+      function multiplo3o5(n) {
+        if (n % 3 == 0 || n % 5 == 0) {
+          console.log("verdadero");
+        } else {
+          console.log("falso");
+        }
+      }
+
+      multiplo3o5(num1);
+      multiplo3o5(num2);
+      multiplo3o5(15);
+
+      //Crear una función que reciba una variable donde se ingresa el nombre del mes como string y devuelva la cantidad de días correspondiente a ese mes
+      const veintiocho = ["febrero"];
+      const treinta = ["abril", "junio", "septiembre", "noviembre"];
+      const treintayuno = [
+        "enero",
+        "marzo",
+        "mayo",
+        "julio",
+        "agosto",
+        "octubre",
+        "diciembre",
+      ];
+
+      function checkMonth(month) {
+        if (veintiocho.includes(month.toLowerCase())) {
+          console.log(`${month} tiene 28 días.`);
+        } else if (treinta.includes(month.toLowerCase())) {
+          console.log(`${month} tiene 30 días.`);
+        } else if (treintayuno.includes(month.toLowerCase())) {
+          console.log(`${month} tiene 31 días.`);
+        }
+      }
+
+      checkMonth("SEPTIEMBRE");
+
+      //otro ejemplo de este ultimo
+        const veintiocho = ['Febrero'];
+        const treinta = ['Abril', 'Junio', 'Septiembre', 'Noviembre' ];
+        const treinti1 = ['Enero', 'Marzo', 'Mayo', 'Julio', 'Agosto', 'Octubre', 'Diciembre'];
+
+        function checkMonth (month){
+            if(veintiocho.includes(month)) {
+                console.log(`${month} tiene 28 dias`)
+            } else if(treinta.includes(month)) {
+                console.log(`${month} tiene 30 dias`)
+            } else {
+                console.log(`${month} tiene 31 dias`)
+            }
+        }
+
+        checkMonth('Diciembre')
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="test" type="text" />
+    <p id="mirror"></p>
+    <button onclick="showValue()">Mostrar Valor</button>
+
+    <!-- OTRA FORMA DE HACER ALGO PARECIDO
+
+    <input id="test" type="text" onkeypress= "handleChange(event)" />
+    <p id="mirror"></p> 
+
+-->
+
+    <script>
+
+        //SOLUCION AL EJERCICIO DE ARRIBA COMENTADO:
+        //function handleChange(e) {
+        //    const value = e.target.value;
+        //    const mirror = document.getElementById("mirror");
+
+        //    mirror.innerHTML = value;
+        //}
+
+
+
+
+        // EVENT: SON PARAMENTROS. ONKEYPRESS ES UN EVENTO, POR EJEMPLO.
+        // EJEMPLO DE EVENTOS DE TECLADO: ONCHANGE, ONKEYPRESS, ONKEYUP, ONKEYDOWN
+        function showValue() {
+            const input = document.getElementById("test");
+            const mirror = document.getElementById('mirror');
+            mirror.innerHTML = input.value;
+            console.log(input.value);
+        }
+    </script>
+</body>
+</html>

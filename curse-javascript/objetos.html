@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const name = 'juani'
+        const surname = 'gallo'
+
+        const person = {
+            name: 'juani',
+            surname: 'gallo',
+            age: 26
+        };
+
+        console.log(person.name);
+
+        
+        //ARRAYS  [] es una forma de agrupar elementos. ES UNA LISTA DE ELEMENTOS 
+
+        const person1 = {
+            name: 'juani',
+            surname: 'gallo' 
+        }
+
+        const person2 = {
+            name: 'belen',
+            surname: 'gallo'
+        }
+
+        const students = [person1, person2];
+
+        console.log(students);
+
+        //console.log(students[0])
+        students.push({
+            name: "Nicolas",
+            surname: "castro garcia"
+        });
+
+        console.log(students);
+
+
+
+        //TAREAAA
+
+        const pelicula1 = {
+            name: 'miss simpatia'
+        }
+        const pelicula2 = {
+            name: 'el diablo viste a la moda'
+        }
+        const pelicula3 = {
+            name: 'toy story'
+        }
+
+        const peliculas = [pelicula1, pelicula2, pelicula3];
+        console.log(peliculas[0]);
+        console.log(peliculas[1]);
+        console.log(peliculas[2]);
+        console.log(`mis top 3 de peliculas son: ${peliculas[0].name}, ${peliculas[1].name} y ${peliculas[2].name}`);
+
+        
+        //OTRA FORMA DE HACER EL EJERCICIO
+        const series = ['Breaking Bad', 'Vikings', 'Peaky Blinders'];
+        console.log(series[0]);
+        console.log(series[1]);
+        console.log(series[2]);
+        console.log(`Mi top 3 de series favoritas es ${series[0]}, ${series[1]}, ${series[2]}`);
+
+
+        const age = 25;
+        const is18 = age == 18;
+        console.log(is18);
+    </script>
+    
+</body>
+</html>

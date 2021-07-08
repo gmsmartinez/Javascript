@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body {
+            background-color: #a8c0c4;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            
+        }
+
+.maincontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.wraper{
+    position: relative;
+}
+.pokemonImg{
+    position: absolute;
+    top: 350px;
+    left: 420px;
+
+}
+
+.pokemonId {
+    height: 40px;
+    width: 200px;
+    border: transparent;
+    
+}
+.pokemonName{
+    color: white;
+    font-size: 2em;;
+    font-weight: bolder;
+    position: absolute;
+    bottom: 75px;
+    left: 370px;
+}
+    </style>
+</head>
+<body>
+    <body>
+        <main class="maincontainer">
+            <div class="search">
+                <input type="text" class="pokemonId" id="pokemonId"  placeholder="Buscar Pokemon...">
+            </div>
+         <div class="wrapper">
+             <img src="https://media-s3-us-east-1.ceros.com/hype-beast/images/2018/07/13/3510cdb9cf222cd0cec19fdfea4bddbb/pokedex.png?imageOpt=1&fit=bounds&width=1047" alt="">
+         <div>
+             <img id="pokemonImg" class="pokemonImg" />
+         </div>
+             <label class="pokemonName" id="pokemonName"></label>
+         </div>
+            </main>
+       
+
+    <script>
+         async function fetchData(e) {
+
+            if (e.key == "Enter" && e.target.value != "") {
+    const inputValue = document.getElementById("pokemonId").value.toLowerCase();
+    const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${inputValue}`);
+    const json = await data.json();
+
+    document.getElementById("pokemonName").innerText = json.name;
+    document.getElementById("pokemonImg").classList.add("view");
+    document.getElementById("pokemonImg").src = json.sprites.front_default;
+    document.getElementById("pokemonId").value = "";
+
+  }
+}
+
+const input = document.getElementById("pokemonId")
+
+input.addEventListener("keypress", e => fetchData(e));
+
+    </script>
+    
+</body>
+</html>

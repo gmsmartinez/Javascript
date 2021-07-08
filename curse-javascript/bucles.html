@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        
+        //map: es funcional. exclusivos para iterar arrays
+        //for y while: no se consideran funcionales. no necesita de un tipo de dato en particular para realizar estas iteraciones.
+
+        
+        //el bucle FOR: 3 parametros. el primero el valor de inciio, el segundo el valor de corte y el tercero el valor de incremento
+        //for (let i = 0; i <10; i++)
+        //console.log("hola courseIt")
+        //console.log(i); -> si lo hago asi se imprime 10 veces. del 0 al 9
+
+        
+        
+        //const personas = ['Juani', 'Bel', 'nico'];
+        //for (let i = 0; i < personas.length; i++ ) { //VALOR DE INICIO Y DE CORTE (o sea, son 2 variables en esta parte). i++ + i+1. y ahora viene el valor del incremento (i++)
+            
+        //    console.log(personas[i]);
+        //} 
+
+        const arr = [1, 23, 10, 3, 5, 100, 9, 14] 
+        let mayorNumero = arr[0];
+
+        for (let i = 0; i < arr.length; i++) {
+            const numeroActual = arr[i];
+
+            if (numeroActual > mayorNumero) {
+                mayorNumero = numeroActual
+            }
+        }
+
+        console.log(mayorNumero);
+
+        //CONCLUSION. EL BUCLE FOR NOS SIRVE PARA EJECUTAR MULTIPLE VECES EL BLOQUE DE CODIGO QUE NOSOTROS DIGAMOS.
+        //TIENE 3 PARAMETROS. VARIABLE DE INICIO, VARIABLE DE CORTE E INCREMENTO POR ITERACCION. SERIAN ESTOS 3 DE ACA: for (let i = 0; i < arr.length; i++)
+
+
+        //WHILE. EN ESTE CASO NO DECLARO LA VARIABLE, SINO QUE LA VARIABLE i TIENE QUE ESTAR ARRIBA DEL WHILE. o sea, la variable ya existe antes del while
+
+        let i = 1;
+        while (i <= 10) {
+            console.log(i);
+            i = i + 1
+        }
+
+       // const personas = ["juani", "bel"];
+        //let i = 0;
+        //while (i < personas.length) {
+        //    console.log(personas[i]);
+        //    i = i + 1;            IMPORTANTE ESTA ULTIMA LINEA, SINO ENTRO EN UN LOOP INFINITO
+        //}
+
+
+        //EL map se implemento en la version 2005
+        //MAP sirve solo para darle vueltas a arrays
+       //este metodo (USANDO EL MAP) hace lo mismo que usando un for o un while. pero quedo mas simple asi: (lo mapea (al array personas), o sea recorre todos los elementos que tiene ese array)
+       // y asi tenemos el mismo resultado que con el FOR o con el WHILE
+       //el MAP hace lo mismo que el for o el while
+       
+       //agarra el array persona y mapealo, o sea, recorre todos los elementos que tenga ese arrays y 
+       //por cada elemento que encuentres, hace esto: persona.map((persona etc)), donde ese primer parametro, 
+       //sea el valor de ese elementos. Osea, persona primero seria juani y despues bel. 
+       //basimente se obtiene el mismo resultado que haciendo for o while. MAP lo soluciona por nosotros
+
+       const personas = ["juani", "bel"];
+
+       personas.map((persona) => {
+           console.log(persona);
+       });
+
+       
+       
+       const arr = [1, 2, 3];
+
+       const double = arr.map((num) => {
+           return num *2;
+           //return "hola";  esto returnaria 3 veces hola
+       });
+
+       console.log(double);
+
+
+    </script>           
+</body>
+</html>

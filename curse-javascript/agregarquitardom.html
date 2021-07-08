@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="principal">hola courseit!</h1>
+    <p>esto es un parrafo de prueba</p>
+
+    <ul id="list"></ul>
+
+    <script>
+
+    function addItem(value) {
+        const list = document.getElementById('list');
+        const item = document.createElement("li");
+        const text = document.createTextNode(value); //este es un nodo de texto
+
+        item.appendChild(text); //ESTO SIRVE PARA METER UN ELEMENTO DENTRO DE OTRO. METI UN NODO DEL DOM
+        list.appendChild(item);
+
+    }
+
+    //INNERHTML: PARA CAMBIAR EL CONTENIDO INTERNO DE UNA ETIQUETA
+
+    function addItemHTML(value) {
+        const list = document.getElementById('list');
+        const oldHTML = list.innerHTML
+
+        list.innerHTML = `${oldHTML} <li>${value}</li>`;
+
+    }
+
+    const prueba = document.getElementById("principal");
+
+    prueba.innerHTML = "hola curso de javascript";
+
+
+
+    </script>
+</body>
+</html>
